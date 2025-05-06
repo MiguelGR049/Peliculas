@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="row mt-5 justify-content-center">
         <div class="col mt-4 text-center">
-            <div class="row justify-content-center">
+            <div class="row mt-5 justify-content-center">
                 <div class="card p-3 rounded-3 mb-4" style="background-color: rgba(255, 255, 255, 0.5);">
                     <div class="corner top-left">
                         <img src="{{asset('img/adorno04.png')}}" alt="Adorno esquina superior izquierda">
@@ -29,6 +29,7 @@
                                     <th scope="col">Genero</th>
                                     <th scope="col">Director</th>
                                     <th scope="col">Fecha de Estreno</th>
+                                    <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,9 +38,17 @@
                                     <th scope="row">{{$pelicula->id}}</th>
                                     <td scope="row">{{$pelicula->titulo}}</td>
                                     <td>{{$pelicula->descripcion}}</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
+                                    <td>{{$pelicula->genero}}</td>
+                                    <td>{{$pelicula->director}}</td>
+                                    <td>{{$pelicula->fecha_estreno}}</td>
+                                    <td>
+                                        <a class="btn btn-warning" href="{{route('editar',$pelicula->id)}}">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </a>
+                                        <a class="btn btn-danger" href="{{route('eliminar',$pelicula->id)}}">
+                                            <i class="fa-regular fa-trash-can"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

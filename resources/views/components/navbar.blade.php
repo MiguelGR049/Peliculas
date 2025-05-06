@@ -23,9 +23,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('agregar')}}">Agregar</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('editar')}}">Editar</a>
-                    </li>
                 </ul>
             </div>
         </div>

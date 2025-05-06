@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Catalogo extends Model{
     use HasFactory;
+    public $timestamps = false;
+    protected $primaryKey = 'id';
     protected $table = 'catalogo';
 }
