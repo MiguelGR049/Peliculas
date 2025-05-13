@@ -20,6 +20,14 @@ class Peliculas extends Migration
             $table->string("director",250);
             $table->date("fecha_estreno");
         });
+        Schema::create("usuario", function (Blueprint $table) {
+            $table->id();
+            $table->string("nombre",250);
+            $table->string("apellido",250);
+            $table->string("usuario",250)->unique();
+            $table->string("email",250);
+            $table->text("password");
+        });
     }
 
     /**
