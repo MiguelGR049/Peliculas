@@ -54,6 +54,21 @@ class CatalogoController extends Controller{
     }
 
     public function actualizar(Request $request, Catalogo $pelicula){
+        request()->validate([
+            "titulo"=> "required|string",
+            "descripcion"=> "required|string",
+            "genero"=> "required|string",
+            "director"=> "required|string",
+            "fecha_estreno"=> "required|date|date_format:Y-m-d"
+        ],
+        [
+            "titulo.required"=>"El titulo es obligatorio",
+            "descripcion.required"=>"La descripcion es obligatoria",
+            "genero.required"=>"El genero es obligatorio",
+            "director.required"=>"El director es obligatorio",
+            "fecha_estreno.required"=>"La fecha de estreno es obligatoria",
+            "fecha_estreno.date_format"=> "La fecha de estreno no es válida",
+        ]);
         $pelicula->titulo = $request->titulo;
         $pelicula->descripcion = $request->descripcion;
         $pelicula->genero = $request->genero;
@@ -63,6 +78,20 @@ class CatalogoController extends Controller{
         return redirect()->route("listado_peliculas");
     }
     public function insertar_pelicula(Request $request, Catalogo $pelicula){
+        request()->validate([
+            "titulo"=> "required|string",
+            "descripcion"=> "required|string",
+            "genero"=> "required|string",
+            "director"=> "required|string",
+            "fecha_estreno"=> "required|date"
+        ],
+        [
+            "titulo.required"=>"El titulo es obligatorio",
+            "descripcion.required"=>"La descripcion es obligatoria",
+            "genero.required"=>"El genero es obligatorio",
+            "director.required"=>"El director es obligatorio",
+            "fecha_estreno.required"=>"La fecha de estreno es obligatoria"
+        ]);
         $pelicula->titulo = $request->titulo;
         $pelicula->descripcion = $request->descripcion;
         $pelicula->genero = $request->genero;
