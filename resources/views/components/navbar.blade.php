@@ -24,7 +24,7 @@
                         <a class="nav-link" href="{{route('agregar')}}">Agregar</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('login')}}" class="btn btn-danger" id="btn_cerrar_sesion">Cerrar Sesion
+                        <a href="{{route('cerrar_sesion')}}" class="btn btn-danger" id="btn_cerrar_sesion">Cerrar Sesion
                         </a>
                     </li>
                 </ul>

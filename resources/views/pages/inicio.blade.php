@@ -1,5 +1,9 @@
 @extends('plantilla')
 
+<?php
+    $sesionUsuario = session('sesionUsuario');
+?>
+
 @section('contenido')
 @include('components/navbar')
 <div class="container mb-5">
